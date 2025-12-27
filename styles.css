@@ -16,8 +16,8 @@ body {
 
 .letter-container {
   float : left;
-  height: 35%;
-  width: 30%;
+  height: 40%;
+  width: 35%;
   margin-top: 100px;
   margin-left: 50px;
   text-align: center;
@@ -46,6 +46,7 @@ body {
 }
 
 .pictures {
+  position:relative;
   margin-top: 100px;
   height: 50%;
   width: 50%;
@@ -59,10 +60,14 @@ body {
   padding: 40px;
 }
 
-.pictures img {
-  width: 200px;
-  height: 250px;
+.pin-design {
+  position: absolute;
+  top: -70px;
+  rotate: calc(30deg);
+  right: -50px;
+  width: 100px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  height: auto;
+  z-index: 10;
 }
