@@ -5,13 +5,23 @@
 }
 
 body {
+  margin : 15px;
+  text-align:center;
   font-family: "Georgia", serif;
+  font-size: 22px;
   background-color: #fbeaea; 
-  color: #333;
+  color: #3f0202;
   min-height: 100vh;
 }
 
 .letters {
+  float : left;
+  height: 35%;
+  width: 30%;
+  margin-top: 100px;
+  margin-left: 50px;
+  border-radius: 20px;
+  background-color: rgb(252, 129, 129);
   text-align: center;
   padding: 60px 20px;
 }
@@ -23,11 +33,16 @@ body {
 }
 
 .pictures {
-  display: flex;
+  margin-top: 100px;
+  height: 50%;
+  width: 50%;
+  margin-right:50px;
+  border-radius: 20px;
+  background-color: #dfbba1;
+  float: right;
   justify-content: center;
   align-items: center;
   gap: 20px;
-
   padding: 40px;
 }
 
