@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background-color: #fbeaea; 
+  color: #333;
+  min-height: 100vh;
+}
+
+.letters {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.letters h1 {
+  font-size: 2.5rem;
+  color: #b23a48;
+  letter-spacing: 1px;
+}
+
+.pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding: 40px;
+}
+
+.pictures img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
