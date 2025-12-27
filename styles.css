@@ -14,22 +14,35 @@ body {
   min-height: 100vh;
 }
 
-.letters {
+.letter-container {
   float : left;
   height: 35%;
   width: 30%;
   margin-top: 100px;
   margin-left: 50px;
-  border-radius: 20px;
-  background-color: rgb(252, 129, 129);
   text-align: center;
-  padding: 60px 20px;
 }
 
-.letters h1 {
-  font-size: 2.5rem;
+.letter-container h1 {
+  font-size: 22px;
+  text-align: center;
   color: #b23a48;
   letter-spacing: 1px;
+}
+
+.letter-content {
+  border-radius: 10px;
+  background-color: rgb(252, 129, 129);
+  margin-top: 10px;
+  padding: 20px, 30px;
+}
+
+.letters p {
+  font-family:"Brush Script MT", cursive;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #3f0202;
 }
 
 .pictures {
