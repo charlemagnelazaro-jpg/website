@@ -71,8 +71,10 @@ body {
 
 .polaroid {
   background-color:white;
-  min-height:300px;
-  min-width:200px;
+  min-height:200px;
+  min-width:150px;
+  max-height:300px;
+  max-width:200px;
   width: 10%;
   height: 20%;
   margin-top: 20px;
@@ -89,6 +91,7 @@ body {
 .polaroid-text {
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 20px;
-  padding: 20px;
+  font-size: .8rem;
+  margin-top:.4rem;
+  padding: .2rem;
 }
