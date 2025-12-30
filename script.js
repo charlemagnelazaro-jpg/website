@@ -26,9 +26,9 @@ changeLetter = (direction) => {
         words.style.opacity = 1;
     }, 500);
 }
-document.querySelector('.NextLetterButton').addEventListener('click', () => {
+document.querySelector('#next-button').addEventListener('click', () => {
     changeLetter('next');
 });
-document.querySelector('.PrevLetterButton').addEventListener('click', () => {
+document.querySelector('#prev-button').addEventListener('click', () => {
     changeLetter('prev');
 });

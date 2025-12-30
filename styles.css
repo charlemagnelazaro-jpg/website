@@ -16,10 +16,13 @@ body {
 
 .letter-container {
   float : left;
-  height: 65%;
+
+  height: 80%;
   width: 35%;
+
   margin-top: 40px;
-  margin-left: 50px;
+  margin-left: 80px;
+
   text-align: center;
 }
 
@@ -57,6 +60,81 @@ body {
   text-align: justify;
 
   color: #3f0202;
+}
+
+.Buttons{
+ display:flex;
+ justify-content: center;
+
+ margin-top:10px;
+
+ gap: 15px;
+
+}
+
+.DirectionButtons{
+  background-color:#b23a48;
+
+  color:rgb(252, 129, 129);
+
+  border:2px solid rgb(252, 129, 129);
+  border-radius: 5px;
+
+  width: 150px;
+
+  padding: 5px;
+}
+
+.DirectionButtons span{
+  position:relative;
+
+  font-size:1rem;
+  font-family:'Times New Roman', Times, serif;
+
+  transition : 0.5s;
+}
+
+.DirectionButtons:hover{
+  background-color:rgb(252, 129, 129);
+
+  color:#b23a48;
+
+  cursor:pointer;
+
+  border:2px solid #b23a48;
+
+}
+
+#next-button span:after{
+  position: absolute;
+  content: '\2764\FE0F';
+  opacity: 0;
+  right: 2px;
+  transition: 0.5s;
+}
+
+#next-button:hover span{
+  padding-right:20px;
+}
+
+#next-button:hover span:after{
+  opacity: 1;
+}
+
+#prev-button span:before{
+  position: absolute;
+  content: '\2764\FE0F';
+  opacity: 0;
+  left: 2px;
+  transition: 0.5s;
+}
+
+#prev-button:hover span{
+  padding-left:20px;
+}
+
+#prev-button:hover span:before{
+  opacity: 1;
 }
 
 .pictures {
