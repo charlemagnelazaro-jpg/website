@@ -8,6 +8,13 @@ let thirdLetter = "2 more days before I can get to say that I'm ending the year 
 
 let letterCollection  = [firstLetter, secondLetter, thirdLetter];
 
+const pictures_container = document.querySelector('.pictures-container');
+
+const pictures = [
+    {src: "images/dates/2nd month.jpg", caption:"2nd Month" },
+    {src: "images/dates/Nona's bday.jpg", caption: "Nona's Birthday"},
+    {src: "images/dates/3rd month.jpg", caption: "3rd Month"},];
+
 words.textContent = letterCollection[currentLetterIndex];
 
 changeLetter = (direction) => {
@@ -31,4 +38,21 @@ document.querySelector('#next-button').addEventListener('click', () => {
 });
 document.querySelector('#prev-button').addEventListener('click', () => {
     changeLetter('prev');
+});
+
+pictures.forEach((pic) => {
+    const polaroid = document.createElement('div');
+    polaroid.className = 'polaroid';
+
+    const img = document.createElement('img');
+    img.src = pic.src;
+    img.className = 'polaroid-img';
+
+    const caption = document.createElement('p');
+    caption.textContent = pic.caption;
+    caption.className = 'polaroid-text';
+
+    polaroid.appendChild(img);
+    polaroid.appendChild(caption);
+    pictures_container.appendChild(polaroid);
 });
