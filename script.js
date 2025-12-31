@@ -94,9 +94,22 @@ nextPictures = () => {
 document.querySelector('#next_pic').addEventListener('click', nextPictures);
 
 prevPictures = () => {
-    currentPicIndex = (currentPicIndex - 6 + pictures.length) % pictures.length;
-    pictures_div.innerHTML = '';
-    renderPictures(pictures.slice(currentPicIndex, currentPicIndex + 6));
+    pictures_div.classList.remove('fade-in');
+    pictures_div.classList.add('fade-out');
+
+    setTimeout(() => {
+        pictures_div.innerHTML = ''; 
+
+        renderPictures(pictures.slice(currentPicIndex-6, currentPicIndex));
+
+        pictures_div.classList.remove('fade-out');
+        pictures_div.classList.add('fade-in');
+
+        currentPicIndex -= 6;
+        if (currentPicIndex <= 0) {
+            currentPicIndex = 0; 
+        }
+    }, 500); 
 }
 
 document.querySelector('#prev_pic').addEventListener('click', prevPictures);

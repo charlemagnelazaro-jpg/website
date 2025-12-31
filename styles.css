@@ -95,6 +95,7 @@ body {
   font-family:'Times New Roman', Times, serif;
 
   transition : 0.5s;
+  pointer-events: none;
 }
 
 .DirectionButtons:hover{
@@ -216,6 +217,14 @@ body {
   background-color:transparent;
   font-size: 50px;
   cursor: pointer;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+  transform: rotate(-45deg);
 }
 
 .picture_button:hover{
