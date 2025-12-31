@@ -9,13 +9,22 @@ let thirdLetter = "2 more days before I can get to say that I'm ending the year 
 let letterCollection  = [firstLetter, secondLetter, thirdLetter];
 
 const pictures_container = document.querySelector('.pictures-container');
-
+const pictures_div = document.querySelector('.pictures');
+const polaroids = document.querySelectorAll('.polaroid');
 const pictures = [
+    {src:"images/dates/5th_month.jpg", caption: "5th Month"},
+    {src:"images/dates/Bask_date.jpg", caption: "Bask date"},
     {src: "images/dates/2nd month.jpg", caption:"2nd Month" },
     {src: "images/dates/Nona's bday.jpg", caption: "Nona's Birthday"},
-    {src: "images/dates/3rd month.jpg", caption: "3rd Month"},];
+    {src: "images/dates/3rd month.jpg", caption: "3rd Month"},
+    {src: "images/dates/ATC_date.jpg", caption: "ATC date"},
+    {src: "images/dates/4th_month2.jpg", caption: "4th Month(2)"},
+    {src: "images/dates/Chesca's_bday.jpg", caption: "Chesca's Birthday"},];
 
 words.textContent = letterCollection[currentLetterIndex];
+
+let currentPicIndex = 0;
+
 
 changeLetter = (direction) => {
 
@@ -40,19 +49,54 @@ document.querySelector('#prev-button').addEventListener('click', () => {
     changeLetter('prev');
 });
 
-pictures.forEach((pic) => {
-    const polaroid = document.createElement('div');
-    polaroid.className = 'polaroid';
+renderPictures = (pictures) => {
+    pictures.forEach((pic) => {
+        const polaroid = document.createElement('div');
+        polaroid.className = 'polaroid';
+        const rotation = Math.floor(Math.random() * 15) - 5;
+        polaroid.style.transform = `rotate(${rotation}deg)`;
 
-    const img = document.createElement('img');
-    img.src = pic.src;
-    img.className = 'polaroid-img';
+        const img = document.createElement('img');
+        img.src = pic.src;
+        img.className = 'polaroid-img';
+        
+        const caption = document.createElement('p');
+        caption.textContent = pic.caption;
+        caption.className = 'polaroid-text';
 
-    const caption = document.createElement('p');
-    caption.textContent = pic.caption;
-    caption.className = 'polaroid-text';
+        polaroid.appendChild(img);
+        polaroid.appendChild(caption);
+        pictures_div.appendChild(polaroid);
+    });
+}
 
-    polaroid.appendChild(img);
-    polaroid.appendChild(caption);
-    pictures_container.appendChild(polaroid);
-});
+renderPictures(pictures.slice(currentPicIndex, currentPicIndex + 6));
+currentPicIndex += 6;
+/* to switch to next 6 pictures */
+nextPictures = () => {
+    pictures_div.classList.remove('fade-in');
+    pictures_div.classList.add('fade-out');
+
+    setTimeout(() => {
+        pictures_div.innerHTML = ''; 
+
+        renderPictures(pictures.slice(currentPicIndex, currentPicIndex + 6));
+
+        pictures_div.classList.remove('fade-out');
+        pictures_div.classList.add('fade-in');
+
+        currentPicIndex += 6;
+        if (currentPicIndex >= pictures.length) {
+            currentPicIndex = 0; 
+        }
+    }, 500); 
+}
+document.querySelector('#next_pic').addEventListener('click', nextPictures);
+
+prevPictures = () => {
+    currentPicIndex = (currentPicIndex - 6 + pictures.length) % pictures.length;
+    pictures_div.innerHTML = '';
+    renderPictures(pictures.slice(currentPicIndex, currentPicIndex + 6));
+}
+
+document.querySelector('#prev_pic').addEventListener('click', prevPictures);

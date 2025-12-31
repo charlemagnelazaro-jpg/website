@@ -148,12 +148,10 @@ body {
   flex-wrap: wrap;
   position: relative;
 
-  justify-content: center;
-  gap: 30px;
-  align-items: center;
 
   width: 45%;
-  height: 80%;
+  min-height: 80%;
+  height:auto;
   padding: 20px;
 
   background-color:#b23a48;
@@ -161,7 +159,14 @@ body {
   border-radius:10px;
 
 }
+.pictures{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
+  gap: 10px;
+  align-items: center;
+}
 .pin-design {
  position: absolute;
   top: -30px;
@@ -177,14 +182,17 @@ body {
   background-color: white;
   width: 140px;
   height: 200px;
+
   padding: 5px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+
   margin: 20px;
   text-align: center;
   overflow: hidden;      
 }
 
 .polaroid-img {
+  order:1; 
   margin-top: 5%;
   
   width: 85%;
@@ -197,4 +205,40 @@ body {
   font-size: .8rem;
   margin-top:.4rem;
   padding: .2rem;
+}
+
+.picture_button {
+  opacity: 0.3;
+  order: 2;
+  position:relative;
+
+  border:none;
+  background-color:transparent;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.picture_button:hover{
+  opacity: 1;
+  transform: scale(1.2);
+}
+#next_pic{
+  position:absolute;
+  bottom:0px;
+  right:30px;
+}
+#prev_pic{
+  position:absolute;
+  bottom:0;
+  left:30px;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
